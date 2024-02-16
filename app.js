@@ -1,21 +1,28 @@
 require('./config/db')
 const express = require('express');
+const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
-const routes = require('./routes/user.routes'); 
-const app = express();
+const routes = require('./routes/Auth.route'); 
+
 // usesing 
 app.use(cors())
 // use morgam 
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-// routes
-app.use( "/", routes);
 
+
+// routes
+app.use( "/api/v1/auth", routes);
+
+// defualt route 
+app.get('/', (req,res)=>{
+  res.status(200).send('<h1>welcme to server </h1>')
+})
 
 // not found Router
-app.use( (req, res)=>{
+app.use('*', (req, res)=>{
     res.status('404').send("Page not found");
   });
 
