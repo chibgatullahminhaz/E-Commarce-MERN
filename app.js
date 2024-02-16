@@ -1,10 +1,13 @@
 require('./config/db')
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
 const routes = require('./routes/user.routes'); 
 const app = express();
 // usesing 
 app.use(cors())
+// use morgam 
+app.use(morgan('dev'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 // routes
