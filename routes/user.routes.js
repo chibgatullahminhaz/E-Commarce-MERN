@@ -13,5 +13,9 @@ routes.get("/user", (req,res)=>{
         res.status(200).send('<h1> This is user Page <h1/>')
         })
 
+ routes.get("/about", (req,res)=>{
+            res.status(200).send('<h1> This is user Page <h1/>')
+            })
+
 
 module.exports = routes;
