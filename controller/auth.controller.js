@@ -112,4 +112,10 @@ const loginController = async (req,res)=>{
     }
 }
 
-module.exports= {registerController, loginController}
+// test trouters
+const testController = (req,res)=>{
+    res.status(201).send('Protected route');
+}
+
+
+module.exports= {registerController, loginController, testController}
