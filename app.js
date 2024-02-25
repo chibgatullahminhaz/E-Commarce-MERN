@@ -5,7 +5,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const routes = require('./routes/Auth.route'); 
 
-// usesing 
+// use cors 
 app.use(cors())
 // use morgam 
 app.use(morgan('dev'));
